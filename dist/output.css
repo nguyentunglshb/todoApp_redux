@@ -1,6 +1,7 @@
 .App {
   text-align: center;
 }
+
 input[type="text"] {
   font-family: "Roboto", sans-serif;
   color: #333;
@@ -17,49 +18,87 @@ input[type="text"] {
 }
 
 /* only animate if the device supports hover */
+
 @media (hover: hover) {
   #creditcard {
     /*  set start position */
-    transform: translateY(110px);
+    -webkit-transform: translateY(110px);
+            transform: translateY(110px);
+    transition: -webkit-transform 0.1s ease-in-out;
     transition: transform 0.1s ease-in-out;
+    transition: transform 0.1s ease-in-out, -webkit-transform 0.1s ease-in-out;
     /*  set transition for mouse enter & exit */
   }
 
   #money {
     /*  set start position */
-    transform: translateY(180px);
+    -webkit-transform: translateY(180px);
+            transform: translateY(180px);
+    transition: -webkit-transform 0.1s ease-in-out;
     transition: transform 0.1s ease-in-out;
+    transition: transform 0.1s ease-in-out, -webkit-transform 0.1s ease-in-out;
     /*  set transition for mouse enter & exit */
   }
 
   button:hover #creditcard {
-    transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    transition: -webkit-transform 0.2s ease-in-out;
     transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
     /*  overide transition for mouse enter */
   }
 
   button:hover #money {
-    transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    transition: -webkit-transform 0.3s ease-in-out;
     transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
     /*  overide transition for mouse enter */
+  }
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+
+  50% {
+    -webkit-transform: translateY(-0.25rem);
+            transform: translateY(-0.25rem);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
 @keyframes bounce {
   0% {
-    transform: translateY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
+
   50% {
-    transform: translateY(-0.25rem);
+    -webkit-transform: translateY(-0.25rem);
+            transform: translateY(-0.25rem);
   }
+
   100% {
-    transform: translateY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
 .button:hover .button__text span {
-  transform: translateY(-0.25rem);
+  -webkit-transform: translateY(-0.25rem);
+          transform: translateY(-0.25rem);
+  transition: -webkit-transform 0.2s ease-in-out;
   transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
 }
 
 /* styling */
@@ -76,7 +115,6 @@ body {
 .button {
   border: none;
   outline: none;
-  background-color: purple;
   padding: 1rem 90px 1rem 2rem;
   position: relative;
   border-radius: 8px;
@@ -90,7 +128,8 @@ body {
 }
 
 .button:active {
-  transform: translateY(1px);
+  -webkit-transform: translateY(1px);
+          transform: translateY(1px);
 }
 
 .button__svg {
